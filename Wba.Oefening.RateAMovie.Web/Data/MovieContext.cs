@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Wba.Oefening.RateAMovie.Web.Domain.Entities;
+using Wba.Oefening.RateAMovie.Domain.Entities;
 
 namespace Wba.Oefening.RateAMovie.Web.Data
 {
@@ -15,11 +15,11 @@ namespace Wba.Oefening.RateAMovie.Web.Data
 
         public DbSet<Actor> Actors { get; set; }
 
-        public DbSet<Director> Directors { get; set; }
+        //public DbSet<Director> Directors { get; set; }
 
-        public DbSet<Company> Companies { get; set; }
+        //public DbSet<Company> Companies { get; set; }
 
-        public DbSet<Rating> Ratings { get; set; }
+        //public DbSet<Rating> Ratings { get; set; }
 
         public MovieContext(DbContextOptions<MovieContext> options) : base(options)
         {
@@ -82,53 +82,11 @@ namespace Wba.Oefening.RateAMovie.Web.Data
                 .IsRequired()
                 .HasMaxLength(100);
 
-            //Configure the Director Entity
-            modelBuilder.Entity<Director>()
-                .HasKey(u => u.Id);
-
-            modelBuilder.Entity<Director>()
-                .Property(u => u.Id)
-                .UseSqlServerIdentityColumn();
-
-            modelBuilder.Entity<Director>()
-                .Property(u => u.FirstName)
-                .IsRequired()
-                .HasMaxLength(100);
-
-            modelBuilder.Entity<Director>()
-                .Property(u => u.LastName)
-                .IsRequired()
-                .HasMaxLength(100);
-
-            //Configure the Company Entity
-            modelBuilder.Entity<Company>()
-                .HasKey(u => u.Id);
-
-            modelBuilder.Entity<Company>()
-                .Property(u => u.Id)
-                .UseSqlServerIdentityColumn();
-
-            modelBuilder.Entity<Company>()
-                .Property(u => u.Name)
-                .IsRequired()
-                .HasMaxLength(200);
+            
+            
 
 
-            //Configure the Rating Entity
-            modelBuilder.Entity<Rating>()
-                .HasKey(u => u.Id);
-
-            modelBuilder.Entity<Rating>()
-                .Property(u => u.Id)
-                .UseSqlServerIdentityColumn();
-
-            modelBuilder.Entity<Rating>()
-                .Property(u => u.Score)
-                //.IsRequired() //niet nodig want Score is een byte, byte is non-nullable
-                ;
-
-            modelBuilder.Entity<Rating>()
-                .Property(u => u.Review);
+            
         }
 
     }

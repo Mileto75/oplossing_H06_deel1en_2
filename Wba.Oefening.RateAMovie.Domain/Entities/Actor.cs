@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Wba.Oefening.RateAMovie.Web.Domain.Entities
+namespace Wba.Oefening.RateAMovie.Domain.Entities
 {
-    public class Director
+    public class Actor
     {
         public long Id { get; set; }
 

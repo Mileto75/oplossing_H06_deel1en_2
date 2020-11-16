@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Wba.Oefening.RateAMovie.Web.Domain.Entities
+namespace Wba.Oefening.RateAMovie.Domain.Entities
 {
     public class Movie
     {
